@@ -28,7 +28,7 @@ else {
     <script src="js/tinymce/tinymce.min.js"></script>
     <script src="js/tinymce/script.js"></script>
     
-    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="" rel="stylesheet">
 
 </head>
 

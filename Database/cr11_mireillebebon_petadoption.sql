@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2020 at 01:57 PM
+-- Generation Time: Mar 28, 2020 at 05:35 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -25,10 +25,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `all`
+-- Table structure for table `allpets`
 --
 
-CREATE TABLE `all` (
+CREATE TABLE `allpets` (
   `ID` int(11) NOT NULL,
   `name` varchar(100) COLLATE latin1_general_ci NOT NULL,
   `image` varchar(40) COLLATE latin1_general_ci DEFAULT NULL,
@@ -40,10 +40,10 @@ CREATE TABLE `all` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
--- Dumping data for table `all`
+-- Dumping data for table `allpets`
 --
 
-INSERT INTO `all` (`ID`, `name`, `image`, `descr`, `city`, `zip_code`, `address`, `DateOfBirth`) VALUES
+INSERT INTO `allpets` (`ID`, `name`, `image`, `descr`, `city`, `zip_code`, `address`, `DateOfBirth`) VALUES
 (1, 'Honey', 'cheval.jpg', 'Adopting a horse is a big decision, in more ways than one! I grew up riding and caring for horses, with a big lesson/riding barn on one side of my childhood home, a small two-horse barn where we kept our adopted one-eyed pony on the other side. When I was a teenager, we build a small barn of our own in our backyard. We moved the pony in, along with a friend’s horse after that horse, a 3 year old thoroughbred – not a safe amateur’s horse – bucked him off and broke his back. We got professional help with the horse, and although he still occasionally had impressive bucking fits (my mom called him “opinionated”), he became a well-loved member of our family.', 'Graz', '8020', 'Hans-List-Platz 1', '2019-01-20'),
 (2, 'Lady', 'chien.jpg', 'Very calm loving dog and Very respectful of other dogs nHeart murmur grade does not slow him down playing at doggy day care\r\nCalm in his kennel\r\nGood w/ all physical manipulations,\r\nNo resource guarding\r\nTakes treats gently nGood w/ cats\r\nOK w/ kids\r\nPlayful w/ dogs (big and small)\r\nKnows basic commands: sit, paw, lie down in french and English\r\nWalks well on a no pull harness', 'Baden', '2500', 'Kaiser-Franz-Ring 1', '2019-03-15'),
 (3, 'Billy Jeans', 'chien1.jpg', 'Billy was abandoned in a warehouse and was their for at least a month. She was afraid and alone until a good Samaritan saw her. My rescue was on the phone telling her how to safely catch her. We where successful in catching her and she was so grateful. Hula was then let down again by an adopter . This sweet angel needs a human who will not give up on her. She is loving and silly and kind, she will have you at Hello. Billy has just been fully trained knows all commands and she is a very smart girl. Let me Say this sweet girl is so much fun and so loving, she is so gentle and and is very loyal to any family that takes her in forever.', 'Bad Vöslau', '2540', 'Rathaus Schloßplatz 1', '2017-05-12'),
@@ -121,6 +121,14 @@ CREATE TABLE `uploads` (
   `status` varchar(225) NOT NULL DEFAULT 'not approved yet'
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `uploads`
+--
+
+INSERT INTO `uploads` (`ID`, `file_name`, `file_description`, `file_uploader`, `file_uploaded_on`, `file_uploaded_to`, `file`, `status`) VALUES
+(1, 'small', 'a brave one', 'user', '2020-03-28 13:23:02', 'user2', '977247.jpg', 'not approved yet'),
+(2, 'big', 'a brave one', 'user', '2020-03-28 13:38:24', 'user2', '951120.jpg', 'approved');
+
 -- --------------------------------------------------------
 
 --
@@ -185,9 +193,9 @@ INSERT INTO `young` (`ID`, `young_name`, `young_image`, `young_age`, `young_desc
 --
 
 --
--- Indexes for table `all`
+-- Indexes for table `allpets`
 --
-ALTER TABLE `all`
+ALTER TABLE `allpets`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -219,9 +227,9 @@ ALTER TABLE `young`
 --
 
 --
--- AUTO_INCREMENT for table `all`
+-- AUTO_INCREMENT for table `allpets`
 --
-ALTER TABLE `all`
+ALTER TABLE `allpets`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
@@ -234,7 +242,7 @@ ALTER TABLE `big`
 -- AUTO_INCREMENT for table `uploads`
 --
 ALTER TABLE `uploads`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`

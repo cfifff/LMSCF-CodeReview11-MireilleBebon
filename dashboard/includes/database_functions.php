@@ -65,14 +65,13 @@ function db_connect(){
 
 
 function getAll($conn){
-		$row2 = array();
-		$query = "SELECT *  FROM all ORDER BY ID DESC";
+		$query = "SELECT * FROM allpets ORDER BY ID DESC";
 		$result = mysqli_query($conn, $query);
 		if(!$result){
 			echo "Can't retrieve data " . mysqli_error($conn);
 			exit;
 		}
-		return $row2;
+		return $result;
 	}
 
 
