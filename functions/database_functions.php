@@ -75,6 +75,17 @@ function getAll($conn){
 		return $row2;
 	}
 
+function getSenior($conn){
+		$row3 = array();
+		$query = "SELECT * FROM allpets WHERE (YEAR(CURDATE()) - YEAR(DateOfBirth)) >= 2 ";
+		$result = mysqli_query($conn, $query);
+		if(!$result){
+			echo "Can't retrieve data " . mysqli_error($conn);
+			exit;
+		}
+		return $row3;
+	}
+
 
 
 

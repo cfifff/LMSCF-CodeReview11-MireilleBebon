@@ -21,7 +21,7 @@ $title = "Index";
                            <a href="young.php?ID=<?php echo $young['ID']; ?>">
                     <img class="img-responsive img-thumbnail" src="./img/<?php echo $young['young_image']; ?>">
                     </a>
-                    <button class="favoriteBtn s-favoriteBtn_awaiting" aria-label="Add Finley to your favorites">
+                    
             
                            <center>
                                 <div class="caption">
