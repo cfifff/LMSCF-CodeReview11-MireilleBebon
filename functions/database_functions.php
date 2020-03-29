@@ -76,17 +76,18 @@ function getAll($conn){
 	}
 
 function getSenior($conn){
-		$row3 = array();
-		$query = "SELECT * FROM allpets WHERE (YEAR(CURDATE()) - YEAR(DateOfBirth)) >= 2 ";
+		$row = array();
+		$query = "SELECT * FROM allpets WHERE DATEDIFF(CURRENT_DATE, DateOfBirth) >= (2 * 365.25)";
 		$result = mysqli_query($conn, $query);
 		if(!$result){
-			echo "Can't retrieve data " . mysqli_error($conn);
-			exit;
+		    echo "Can't retrieve data " . mysqli_error($conn);
+		    exit;
 		}
-		return $row3;
+		for($i = 0; $i < mysqli_num_rows($result); $i++){
+			array_push($row, mysqli_fetch_assoc($result));
+		}
+		return $row;
 	}
-
-
 
 
 
