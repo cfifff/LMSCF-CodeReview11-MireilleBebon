@@ -75,6 +75,8 @@ function getAll($conn){
 		return $row2;
 	}
 
+
+
 function getSenior($conn){
 		$row = array();
 		$query = "SELECT * FROM allpets WHERE DATEDIFF(CURRENT_DATE, DateOfBirth) >= (2 * 365.25)";

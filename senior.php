@@ -12,6 +12,8 @@ $title = "Index";
 ?>
 
 
+<style>.container {display: flex; flex-wrap: wrap; justify-content: center; width: 80%; float: left;}</style>
+<h2>Senior Pets</h2>
 
 <div class="container">
 
@@ -19,15 +21,16 @@ $title = "Index";
     <?php foreach($row as $allpets) { ?>
                    <div class="col-md-3 col-sm-6">
                        <div  class="thumbnail">
-                           <a href="young.php?ID=<?php echo $young['ID']; ?>">
+                           
                     <img class="img-responsive img-thumbnail" src="./img/<?php echo $allpets['image']; ?>">
-                    </a>
+                    
                     
             
                            <center>
                                 <div class="caption">
                                         <p id="autoResize"><?php echo $allpets['name']; ?></p>
                                         <p><?php echo $allpets['address']; ?></p>
+                                        <p><?php echo $allpets['age']; ?></p>
                                 </div>
                            </center>
                        </div>

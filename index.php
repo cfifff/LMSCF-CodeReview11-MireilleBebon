@@ -13,6 +13,18 @@ $title = "Index";
 
 ?>
 
+
+<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css">
+        <script type="text/javascript" src="bootstrap/js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <style>
+          .container {display: flex; flex-wrap: wrap; justify-content: center; width: 80%; float: left;}         
+          .thumbnail img {height: 100px;}
+        </style>
+
 <div class="container">
 
 	<div class="tier">
@@ -29,9 +41,9 @@ $title = "Index";
                    <div class="col-xs-3">
                        <div  class="thumbnail">
                            <a href="young.php?ID=<?php echo $young['ID']; ?>">
-           					<img class="img-responsive img-thumbnail" src="./img/<?php echo $young['young_image']; ?>">
+           					<img class="img-responsive img-thumbnail" src="./img/<?php echo $young['young_image'] ; ?>">
           					</a>
-          					<button class="favoriteBtn s-favoriteBtn_awaiting" aria-label="Add Finley to your favorites">
+          					
             
                            <center>
                                 <div class="caption">

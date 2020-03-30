@@ -20,6 +20,7 @@
 			<th>Zip Code</th>
 			<th>Address</th>
 			<th>Date of Birth</th>
+			<th>Available</th>
 			<th>&nbsp;</th>
 			<th>&nbsp;</th>
 		</tr>
@@ -33,6 +34,7 @@
 			<td><?php echo $row['zip_code']; ?></td>
 			<td><?php echo $row['address']; ?></td>
 			<td><?php echo $row['DateOfBirth']; ?></td>
+			<td><?php echo $row['available']; ?></td>
 			<td><a href="admin_edit.php?ID=<?php echo $row['ID']; ?>">Edit</a></td>
 			<td><a href="admin_delete.php?ID=<?php echo $row['ID']; ?>">Delete</a></td>
 		</tr>

@@ -61,6 +61,10 @@
 				<th>Date Of Birth</th>
 				<td><input type="date" name="DateOfBirth" value="<?php echo $row['DateOfBirth'];?>" required></td>
 			</tr>
+			<tr>
+				<th>Available</th>
+				<td><input type="text" name="available" value="<?php echo $row['available'];?>" required></td>
+			</tr>
 		</table>
 		<input type="submit" name="save_change" value="Change" class="btn btn-primary">
 		<input type="reset" value="cancel" class="btn btn-default">

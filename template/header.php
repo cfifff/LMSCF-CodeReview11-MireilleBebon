@@ -23,14 +23,15 @@
       <a class="navbar-brand" href="index.php">Mireille Pet Adoption</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="general.php">Young Animals</a></li>
+      <li class="active"><a href="index.php">Home</a></li>
+      <li><a href="general.php">General Animals</a></li>
       <li><a href="senior.php">Seniors Animals</a></li>
       
     </ul>
     <form class="navbar-form navbar-left" action="/action_page.php">
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search" name="search">
+        <input type="text" class="form-control" placeholder="Search" name="search" size="30" onkeyup="showResult(this.value)">
+        <div id="livesearch"></div>
         <div class="input-group-btn">
           <button class="btn btn-default" type="submit">
             <i class="glyphicon glyphicon-search"></i>
@@ -45,9 +46,33 @@
 
   </div>
   
-    
   
 </nav>
+
+
+<script>
+function showResult(str) {
+  if (str.length==0) {
+    document.getElementById("livesearch").innerHTML="";
+    document.getElementById("livesearch").style.border="0px";
+    return;
+  }
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else {  // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("livesearch").innerHTML=this.responseText;
+      document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+    }
+  }
+  xmlhttp.open("GET","livesearch.php?q="+str,true);
+  xmlhttp.send();
+}
+</script>
 
 </body>
 </html>

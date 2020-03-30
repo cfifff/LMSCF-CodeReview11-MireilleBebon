@@ -31,6 +31,10 @@
 		$DateOfBirth = date(trim($_POST['DateOfBirth']));
 		$DateOfBirth = mysqli_real_escape_string($conn, $DateOfBirth);
 
+		$available = trim($_POST['available']);
+		$available = mysqli_real_escape_string($conn, $available);
+
+
 
 
 		// add image
@@ -45,7 +49,7 @@
 		
 
 
-		$query = "INSERT INTO allpets VALUES ('" . $ID . "', '" . $name . "', '" . $image . "', '" . $descr . "', '" . $city . "', '" . $zip_code . "', '" . $address . "', '" . $DateOfBirth . "')";
+		$query = "INSERT INTO allpets VALUES ('" . $ID . "', '" . $name . "', '" . $image . "', '" . $descr . "', '" . $city . "', '" . $zip_code . "', '" . $address . "', '" . $DateOfBirth . "', '" . $available . "')";
 		$result = mysqli_query($conn, $query);
 		if(!$result){
 			echo "Can't add new data " . mysqli_error($conn);
@@ -93,6 +97,10 @@
 			<tr>
 				<th>DateOfBirth</th>
 				<td><input type="date" name="DateOfBirth" required></td>
+			</tr>
+			<tr>
+				<th>Available</th>
+				<td><input type="text" name="available" required></td>
 			</tr>
 		</table>
 		<input type="submit" name="add" value="Add new pet" class="btn btn-primary">

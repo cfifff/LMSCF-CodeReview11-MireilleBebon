@@ -12,6 +12,7 @@
 	$zip_code = trim($_POST['zip_code']);
 	$address = trim($_POST['address']);
 	$DateOfBirth = date(trim($_POST['DateOfBirth']));
+	$available = trim($_POST['available']);
 	
 
 	if(isset($_FILES['image']) && $_FILES['image']['name'] != ""){
@@ -32,8 +33,9 @@
 	descr = '$descr', 
 	city = '$city', 
 	zip_code = '$zip_code',
-	address = '$addres', 
-	DateOfBirth = '$DateOfBirth'";
+	address = '$address', 
+	DateOfBirth = '$DateOfBirth',
+	available = '$available'";
 	if(isset($image)){
 		$query .= ", image='$image' WHERE ID = '$ID'";
 	} else {
